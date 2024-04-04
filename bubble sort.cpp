@@ -38,22 +38,31 @@ void sapxep(int* a,int n)
 }
 
 int main()
-{   int n;
-    char s[10];
-    cout<<"Nhap so phan tu cua mang: "<<endl;
-    cin>>n;
-    int a[n];
+{   int n = 0;
+    string s;
 	cout<<"Nhap cac phan tu cua mang: "<<endl;
-	cin.ignore();
-	for(int i = 0;i<n;i++)
-	{   		
-	    if (i == n - 1) 	cin.getline(s,10);
-	    else
-		cin.getline(s,10,',');
-		if(strcmp(s, "red") == 0) a[i] = 0;
-		if(strcmp(s, "while") == 0) a[i] = 1;
-		if(strcmp(s, "blue") == 0) a[i] = 2;	
-
+	getline(cin,s);
+	for(int i = 0;i<s.size();i++)
+	{   
+	 if (s[i]==',') 
+		     n = n + 1;
+	}
+	n = n + 1;
+	int a[n];
+	int i = 0;
+	if (s[0]=='r') a[i] = 0;
+	if (s[0]=='w') a[i] = 1;
+	if (s[0]=='b') a[i] = 2;
+    for(int h = 0; h < s.size();h++)
+    {   
+	    if (s[h] ==',')
+        {	
+		    i = i + 1;
+	    	if (s[h + 1]=='r') a[i] = 0;
+	    	if (s[h + 1]=='w') a[i] = 1;
+	    	if (s[h + 1]=='b') a[i] = 2;
+	    
+		}
 	}
 	sapxep(a,n);
 	for(int i = 0;i<n;i++)
