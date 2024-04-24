@@ -53,13 +53,6 @@ void choi(linklish& a,int t)
 	a.dau = a.dau->next;
 	}
 	else
-	if(k == a.dau)
-	{
-	a.cuoi = a.dau;	
-	a.dau->next = a.dau->next->next;
-	a.dau = a.dau->next;
-	}
-	else
 	{   
 	    k->next = h->next;
 	    a.dau = k->next;
